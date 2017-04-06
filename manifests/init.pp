@@ -93,7 +93,7 @@ class cloudwatchlogs (
         subscribe  => Concat['/etc/awslogs/awslogs.conf'],
       }
     }
-    /^(Ubuntu|CentOS|RedHat)$/: {
+    /^(Ubuntu|CentOS|RedHat|Debian)$/: {
       if ! defined(Package['wget']) {
         package { 'wget':
           ensure => 'present',
